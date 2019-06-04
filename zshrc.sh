@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/lyle-henkeman/.oh-my-zsh"
+export ZSH="/Users/lhenk1/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -65,6 +65,9 @@ HIST_STAMPS="mm/dd/yyyy"
 plugins=(
   git
   aws
+  brew
+  branch
+  cask
   colorize
   command-not-found
   copydir
@@ -85,6 +88,7 @@ plugins=(
   node
   npm
   nvm
+  osx
   postgres
   pip
   python
@@ -94,6 +98,7 @@ plugins=(
   vim-interaction
   vscode
   zsh_reload
+  kubetail
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,11 +111,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -126,3 +131,8 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# kubectl completion
+if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+
+true
